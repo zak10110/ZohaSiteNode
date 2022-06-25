@@ -1,1 +1,19 @@
-<h2>Index Page</h2>
+
+<h2>Main Page</h2>
+
+{{#if products.length}}
+{{#each products}}
+<div>
+    <span>{{Name}}</span>
+    <span>Price</span>
+    <span>IMG</span>
+    <span>RommsCount</span>
+    <span>Square</span>
+    <span>Floor</span>
+</div>
+{{/each}}
+{{else}}
+<h3> No Products </h3>
+{{/if}}
+
+
