@@ -1,19 +1,40 @@
 
-<h2>Main Page</h2>
 
-{{#if products.length}}
-{{#each products}}
-<div>
-    <span>{{Adres}}</span>
-    <span>{{Price}}</span>
-    <span>{{IMG}}</span>
-    <span>{{RommsCount}}</span>
-    <span>{{Square}}</span>
-    <span>{{Floor}}</span>
+<div class="verh">
+<h3>Купить квартиру в Днепре</h3>
 </div>
-{{/each}}
-{{else}}
-<h3> No Products </h3>
-{{/if}}
 
+ <div class="map">
+    <iframe width="862" height="1200" src="https://api.maptiler.com/maps/openstreetmap/?key=OtXT33393kg0GeJ9BHOS#0.3/39.49164/57.18612"></iframe>
+    </div>
+<div class="maindiv">
+   
+    {{#if products.length}}
+    {{#each products}}
+   
+
+    <div class="card">
+        <div class="picturBox">
+         <img class="picture" src={{IMG}}>
+        </div>
+        <div>
+            <span>{{Price}}$</span>
+        </div>
+        <div>
+            <span>{{Adres}}</span>
+        </div>
+        <div>
+        <span>{{RommsCount}} комнат  ·  {{Square}} м²  ·  {{Floor}} Этаж </span>
+        </div>
+        <div class="rounds">
+        </div>
+        <span>{{Description}}</span>
+    </div>
+
+
+    {{/each}}
+    {{else}}
+    <h3> No Products </h3>
+    {{/if}}
+</div>
 

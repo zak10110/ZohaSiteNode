@@ -18,7 +18,8 @@ router.post('/createproduct',async(req, res)=>{
         IMG: req.body.IMG,
         RommsCount: req.body.RommsCount,
         Square: req.body.Square,
-        Floor: req.body.Floor
+        Floor: req.body.Floor,
+        Description: req.body.Description
     }) 
     await product.save()
     res.redirect('/')

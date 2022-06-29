@@ -6,7 +6,8 @@ const schema=new Schema({
     IMG: {type: String, required: true, unique: false},
     RommsCount:{type: Number, required: true, unique: false},
     Square:{type: Number, required: true, unique: false},
-    Floor:{type: Number, required: true, unique: false}
+    Floor:{type: Number, required: true, unique: false},
+    Description:{type: String, required: true, unique: false}
 })
 
 module.exports=model('Product',schema)
