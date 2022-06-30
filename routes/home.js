@@ -1,6 +1,7 @@
 const {Router} = require('express')
 const Product= require('../models/Product')
 const router = Router()
+
 router.get('/',async(req, res)=>{
     const products= await Product.find({}).lean()
     res.render('index', {title: 'ZohaDom', products})
@@ -25,12 +26,7 @@ router.post('/createproduct',async(req, res)=>{
     res.redirect('/')
 })
 
-router.post('/deleteproduct', async (req, res) => {
-    const product = await Product.findById(req.body.id)
-    await product.remove()
-    res.redirect('/admin')
 
-})
 
 router.get('/insideproduct/:productid', async (req, res) => {
     var product = await Product.findById(req.params.productid).lean()
@@ -38,6 +34,12 @@ router.get('/insideproduct/:productid', async (req, res) => {
         title: product.Adres,
         product
     })
+})
+
+router.post('/deleteproduct', async (req, res) => {
+    const product = await Product.findById(req.body.id)
+    await product.remove()
+    res.redirect('/admin')
 })
 
 
