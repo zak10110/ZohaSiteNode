@@ -25,6 +25,21 @@ router.post('/createproduct',async(req, res)=>{
     res.redirect('/')
 })
 
+router.post('/deleteproduct', async (req, res) => {
+    const product = await Product.findById(req.body.id)
+    await product.remove()
+    res.redirect('/admin')
+
+})
+
+router.get('/insideproduct/:productid', async (req, res) => {
+    var product = await Product.findById(req.params.productid).lean()
+    res.render('insideproduct', {
+        title: product.Adres,
+        product
+    })
+})
 
 
-module.exports = router
+
+module.exports= router;

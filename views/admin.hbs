@@ -11,7 +11,20 @@
     <input type="text" name="Description" placeholder="Description">
 </div>
 
-<button type="submit" class="btn">Creaate Product</button>
+<button type="submit" style="background-color:#F1C40F; color: white; margin-top: 3%" class="btn">Удачи Создать Мать</button>
 
 
+</form>
+
+<form style="margin-top:5%" action="/deleteproduct" method="post">
+    <h5 > ДА-ДА Это Удаление , жду топ 40 лучших вопросов на случай смерти ребенка </h5>
+    <select name="id" "form-select" aria-label="Default select example"style="width: 200px">
+        {{#if product.length}}
+        {{#each product}}
+        <option value="{{_id}}">{{Adres}}</option>
+        {{/each}}
+        {{/if}}
+
+    </select>
+    <button type="submit" style="background-color:#F1C40F; color: white;  margin-right:80%" class="btn">Кикнуть Мать</button>
 </form>
